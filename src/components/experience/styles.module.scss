@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.experience {
+
+    &__container {
+        grid-template-columns: auto auto;
+    }
+
+    h3 {
+        margin-bottom: $mb-2;
+        text-align: center;
+    }
+
+    .skills {
+        &__container {
+            grid-template-columns: auto auto;
+            gap: 1rem;
+
+            .skill {
+                display: flex;
+                gap: 1rem;
+
+                &__icon {
+                    margin-top: .2rem;
+                }
+            }
+        }
+    }
+
+    @include smallerDevice {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+}

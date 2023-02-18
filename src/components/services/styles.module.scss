@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+
+.services {
+
+    &__container {
+        grid-template-columns: auto auto auto;
+        align-items: start;
+
+        .service {
+
+            border: 1px solid $text-color;
+            border-radius: 0 0 2rem 2rem;
+            transition: $transition;
+
+            &__head {
+                background-color: $first-color;
+                text-align: center;
+                padding: 1.5rem 2rem;
+                border-radius: 0 0 2rem 2rem;
+
+                h3 {
+                    color: $body-color !important;
+                }
+            }
+
+            &__list {
+                padding: 1.5rem 2rem;
+            }
+
+            &__item {
+                display: flex;
+                gap: .5rem;
+                margin-bottom: $mb-1;
+
+                p {
+                    font-size: .9rem;
+                }
+            }
+
+            &__icon {
+                font-size: 2rem;
+            }
+
+        }
+
+        .service:nth-child(2),
+        .service:nth-child(3) {
+            background-color: $body-color ;
+
+            &:hover {
+                background-color: transparent;
+                cursor: default;
+            }
+        }
+    }
+
+    @include smallerDevice {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @include mobile {
+        &__container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @include largeDevice {
+        &__container {
+            grid-template-columns: 1fr  1fr 1fr;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+
+.contact {
+
+    &__form {
+
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: .5rem;
+            background-color: transparent;
+            border: 1px solid $text-color;
+            resize: none;
+            color: $text-white;
+
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+    }
+
+    &__address {
+        gap: 1.2rem;
+        text-align: center;
+
+        h4 {
+            font-size: 1rem;
+        }
+
+        h5 {
+            font-size: .7rem;
+            color: $text-color;
+        }
+
+        small {
+
+            color: $first-color;
+            transition: $transition;
+
+            &:hover {
+                color: $text-color-light
+            }
+        }
+    }
+
+    @include smallerDevice {
+        &__container {
+
+            grid-template-columns: 1fr;
+            width: $container-width-sm;
+            gap: 3rem !important;
+
+        }
+    }
+
+    @include mobile {
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 3rem !important;
+        }
+    }
+
+    @include largeDevice {
+        &__container {
+            width: 58%;
+            grid-template-columns: 20% 58%;
+         justify-content: space-between;
+        gap: 12%;
+        }
+    }
+}

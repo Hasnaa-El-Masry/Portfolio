@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+
+.portfolio {
+    &__container {
+        grid-template-columns: auto auto auto;
+        gap: 3rem;
+    }
+
+    &__item {
+        background-color: $container-color;
+        padding: 1.2rem;
+        border-radius: 2rem;
+        border: 1px solid transparent;
+        transition: $transition;
+
+        &:hover {
+            border-color: $first-color;
+            background-color: transparent;
+            cursor: default;
+        }
+
+        h3 {
+            margin: 1.2rem 0 1.5rem;
+        }
+    }
+
+    &__img {
+        overflow: hidden;
+        border-radius: 1.5rem;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
+
+        a {
+            height: 40px;
+            padding: .3rem 1rem;
+        }
+    }
+
+    @include smallerDevice {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @include mobile {
+        &__container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @include tablet {
+        &__container {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

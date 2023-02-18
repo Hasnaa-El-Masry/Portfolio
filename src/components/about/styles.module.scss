@@ -1,0 +1,128 @@
+@import '../../styles/variables';
+
+.about {
+  
+    &__container {
+        grid-template-columns: 35% 50%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__img {
+
+        background: linear-gradient(45deg, transparent, $first-color, transparent);
+        border-radius: 2rem;
+
+        &__container {
+            background-color: $first-color;
+            border-radius: 2rem;
+            transition: $transition;
+            transform: rotate(10deg);
+
+            img {
+                border-radius: 2rem;
+            }
+
+        }
+
+        &:hover &__container {
+            transform: rotate(0);
+        }
+    }
+
+    &__cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        color: $first-color;
+        margin-bottom: $mb-1;
+    }
+
+    &__info {
+
+        p {
+            margin: $mb-1 0;
+        }
+
+        a {
+            margin: auto;
+        }
+    }
+
+}
+
+@include smallerDevice {
+
+    .about {
+
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 4rem !important;
+        }
+
+        &__img {
+            width: 65%;
+            margin: auto;
+        }
+
+        &__cards {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__info {
+            text-align: center;
+
+            p {
+                margin-top: 0;
+            }
+
+            a {
+                margin: auto;
+            }
+        }
+    }
+
+}
+
+@include mobile {
+
+    .about {
+        
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 4rem !important;
+        }
+
+        &__img {
+            width: 50%;
+            margin: auto;
+        }
+    }
+
+}
+
+@include largeDevice {
+
+    .about {
+
+        &__container {
+            grid-template-columns: 35% 50%;
+        }
+
+        &__img {
+            width: 100%;
+        }
+
+        &__info {
+        
+            a {
+                margin-inline-start: 0;
+            }
+        }
+    }
+
+}

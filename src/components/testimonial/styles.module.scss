@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.testimonials {
+
+    &__container {
+        width: 40%;
+        padding-bottom: 3rem !important;
+    }
+
+    &__item {
+        text-align: center;
+        background-color: $container-color;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem;
+
+        .item__avatar {
+            overflow: hidden;
+            width: 80px;
+            height: 80px;
+            margin: 1rem auto 1.5rem;
+            border: 2px solid $first-color;
+            border-radius: 50%;
+        }
+
+        small {
+            display: block;
+            width: 70%;
+            margin: 1rem auto;
+            font-weight: 500;
+            user-select: none;
+        }
+    }
+
+    @include smallerDevice {
+        &__container {
+            width: $container-width-sm;
+        }
+    }
+
+    @include mobile {
+        &__container {
+            width: $container-width-lg;
+        }
+    }
+
+    @include tablet {
+        &__container {
+            width: 40%;
+        }
+    }
+}
